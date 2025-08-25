@@ -4,6 +4,7 @@ function App() {
   const sections = [
     {
       id: 'home',
+      img: '/assets/home.png',
       title: 'Home',
       description:
         'Welcome to Bolus Connect, your companion for managing bolus insulin doses.',
@@ -12,6 +13,7 @@ function App() {
         encodeURIComponent('Home')
     },
     {
+
       id: 'dashboard',
       title: 'Dashboard',
       description:
@@ -21,6 +23,7 @@ function App() {
         encodeURIComponent('Dashboard')
     },
     {
+
       id: 'calculator',
       title: 'Bolus Calculator',
       description:
@@ -88,7 +91,7 @@ function App() {
   return (
     <div className="App">
       <header>
-        <h1>Bolus Connect</h1>
+        <h1>Bolus-Connect</h1>
       </header>
       {sections.map((section) => (
         <section key={section.id} id={section.id} className="section">
