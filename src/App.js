@@ -4,87 +4,45 @@ function App() {
   const sections = [
     {
       id: 'home',
-      img: '/assets/home.png',
+      image: '/assets/home.png',
       title: 'Home',
-      description:
-        'Welcome to Bolus Connect, your companion for managing bolus insulin doses.',
-      image:
-        'https://via.placeholder.com/600x400?text=' +
-        encodeURIComponent('Home')
+      description: 'Welcome to Bolus-Connect, your companion for helping calculate bolus doses.',
     },
     {
-
-      id: 'dashboard',
-      title: 'Dashboard',
-      description:
-        'Quick summary of recent boluses and glucose levels to keep you informed at a glance.',
-      image:
-        'https://via.placeholder.com/600x400?text=' +
-        encodeURIComponent('Dashboard')
+      id: 'Logs',
+      title: 'Logs',
+      description: 'Logs provide a quick summary of recent boluses,glucose levels, and carbs to keep you informed at a glance.',
+      image: '/assets/logs.png'
     },
     {
-
       id: 'calculator',
       title: 'Bolus Calculator',
-      description:
-        'Calculate suggested bolus doses based on carb intake and current glucose.',
-      image:
-        'https://via.placeholder.com/600x400?text=' +
-        encodeURIComponent('Bolus Calculator')
+      description: 'The bolus tab helps Calculate suggested bolus doses based on carb intake and current glucose.',
+      image: '/assets/bolus.png'
     },
-    {
-      id: 'meals',
-      title: 'Meal Planner',
-      description:
-        'Store favorite meals and carb counts for fast entry when it is time to eat.',
-      image:
-        'https://via.placeholder.com/600x400?text=' +
-        encodeURIComponent('Meal Planner')
-    },
-    {
-      id: 'logbook',
-      title: 'Logbook',
-      description:
-        'Review historical bolus entries and personal notes for better tracking.',
-      image:
-        'https://via.placeholder.com/600x400?text=' +
-        encodeURIComponent('Logbook')
-    },
-    {
-      id: 'reminders',
-      title: 'Reminders',
-      description:
-        'Set notifications so you never miss an important dose or check.',
-      image:
-        'https://via.placeholder.com/600x400?text=' +
-        encodeURIComponent('Reminders')
-    },
-    {
-      id: 'analytics',
-      title: 'Analytics',
-      description:
-        'Visualize trends in insulin usage and glucose response over time.',
-      image:
-        'https://via.placeholder.com/600x400?text=' +
-        encodeURIComponent('Analytics')
-    },
-    {
-      id: 'profile',
-      title: 'Profile',
-      description:
-        'Manage your personal and medical information in one secure place.',
-      image:
-        'https://via.placeholder.com/600x400?text=' +
-        encodeURIComponent('Profile')
+        {
+      id: 'results',
+      title: 'Bolus Results ',
+      description: 'view your suggested bolus dosage',
+      image: '/assets/bolusresult.png'
     },
     {
       id: 'settings',
       title: 'Settings',
-      description:
-        'Customize Bolus Connect to fit your preferences and needs.',
-      image:
-        'https://via.placeholder.com/600x400?text=' +
-        encodeURIComponent('Settings')
+      description: 'View your profile',
+      image: '/assets/settings.png'
+    },
+    {
+      id: 'parameters',
+      title: 'Bolous Parameters',
+      description: 'The Parameters tab allows you to set your CGM manufacturer, insulin-to-carb (I:C) ratio, target glucose, and insulin sensitivity factor (ISF)',
+      image: '/assets/bolusparameters.png'
+    },
+    {
+      id: 'nutrition',
+      title: 'AI Powered Nutritional Lookup',
+      description: 'Look up nutritional facts such as carbs and sugars all in one app with ChatGPT integration.',
+      image: '/assets/nutrition.png'
     }
   ];
 
@@ -93,6 +51,7 @@ function App() {
       <header>
         <h1>Bolus-Connect</h1>
       </header>
+
       {sections.map((section) => (
         <section key={section.id} id={section.id} className="section">
           <h2>{section.title}</h2>
