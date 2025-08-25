@@ -2,6 +2,12 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+## Section Images
+
+Each entry in the `sections` array within `src/App.js` now accepts an `image` field.
+Provide a URL or path to an image for that section to display a custom graphic
+instead of the default placeholder.
+
 ## Available Scripts
 
 In the project directory, you can run:
