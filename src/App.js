@@ -1,4 +1,7 @@
 import './App.css';
+import { Routes, Route, NavLink, Link } from 'react-router-dom';
+import About from './About';
+import Home from './Home';
 
 function App() {
   const sections = [
@@ -48,17 +51,50 @@ function App() {
 
   return (
     <div className="App">
-      <header>
-        <h1>Bolus-Connect</h1>
-      </header>
+      {/* Navbar */}
+      <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div className="container">
+          <Link className="navbar-brand" to="/">Bolus-Connect</Link>
+          <button
+            className="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#mainNavbar"
+            aria-controls="mainNavbar"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span className="navbar-toggler-icon"></span>
+          </button>
+          <div className="collapse navbar-collapse" id="mainNavbar">
+            <ul className="navbar-nav ms-auto">
+              <li className="nav-item">
+                <NavLink
+                  to="/"
+                  end
+                  className={({ isActive }) => `nav-link ${isActive ? 'active' : ''}`}
+                >
+                  Home
+                </NavLink>
+              </li>
+              <li className="nav-item">
+                <NavLink
+                  to="/about"
+                  className={({ isActive }) => `nav-link ${isActive ? 'active' : ''}`}
+                >
+                  About
+                </NavLink>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
 
-      {sections.map((section) => (
-        <section key={section.id} id={section.id} className="section">
-          <h2>{section.title}</h2>
-          <img src={section.image} alt={`${section.title} screenshot`} />
-          <p>{section.description}</p>
-        </section>
-      ))}
+      {/* Routes */}
+      <Routes>
+        <Route path="/" element={<Home sections={sections} />} />
+        <Route path="/about" element={<About />} />
+      </Routes>
     </div>
   );
 }
